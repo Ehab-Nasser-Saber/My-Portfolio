@@ -7,6 +7,8 @@ import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import '../../core/providers/scroll_provider.dart';
 
 class Components extends StatelessWidget {
+  const Components({super.key});
+
   @override
   Widget build(BuildContext context) {
     final scrollProvider = Provider.of<ScrollProvider>(context);

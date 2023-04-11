@@ -59,7 +59,7 @@ class SkillsMobile extends StatelessWidget {
                         whatIDo: 'Dart, Java',
                         skill: 'Dev Tools:',
                         skillNames:
-                            'Flutter\n\nFigma\n\nPostMan\n\nVsCode\n\nGithub\n\nGitlab',
+                            'Flutter\n\nFigma\n\nPostMan\n\nVsCode\n\nGithub',
                       ),
                     ),
                     SizedBox(
