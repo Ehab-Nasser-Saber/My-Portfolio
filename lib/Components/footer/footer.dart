@@ -13,14 +13,14 @@ class Footer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.symmetric(vertical: 70),
+      padding: const EdgeInsets.symmetric(vertical: 70),
       child: Column(
         children: [
           SizedBox(
             height: 2.h,
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
+          const Padding(
+            padding: EdgeInsets.all(8.0),
             child: Text(
               'Living, learning, & leveling up\none day at a time.',
               textAlign: TextAlign.center,
@@ -51,7 +51,7 @@ class Footer extends StatelessWidget {
           SizedBox(
             height: 5.h,
           ),
-          Text(
+          const Text(
             'Made by Ehab Nasser',
             style: TextStyle(fontSize: 16, fontWeight: FontWeight.w300),
           ),
@@ -61,11 +61,11 @@ class Footer extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
+              const Text(
                 'Made with',
                 style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               SizedBox(
@@ -87,7 +87,7 @@ class IconButton extends StatelessWidget {
   final IconData icon;
   final VoidCallback? onTap;
 
-  const IconButton({required this.icon, required this.onTap});
+  const IconButton({super.key, required this.icon, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -95,16 +95,16 @@ class IconButton extends StatelessWidget {
       padding: const EdgeInsets.all(5.0),
       child: ElevatedButton(
         onPressed: onTap,
+        style: ElevatedButton.styleFrom(
+          elevation: 0,
+          backgroundColor: const Color.fromRGBO(117, 16, 247, 1.0),
+          shape: const CircleBorder(),
+          padding: const EdgeInsets.all(18),
+        ),
         child: Icon(
           icon,
           color: Colors.black,
           size: 20,
-        ),
-        style: ElevatedButton.styleFrom(
-          elevation: 0,
-          backgroundColor: Color.fromRGBO(117, 16, 247, 1.0),
-          shape: CircleBorder(),
-          padding: EdgeInsets.all(18),
         ),
       ),
     );

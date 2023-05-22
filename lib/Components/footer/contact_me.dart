@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/core/theme/app_theme.dart';
-
-import 'package:sizer/sizer.dart';
+import 'package:universal_html/html.dart' as html;
 
 import '../../core/color/colors.dart';
-import '../../core/constant/url_launcher.dart';
 
 class ContactMe extends StatelessWidget {
   const ContactMe({
@@ -30,34 +28,26 @@ class ContactMe extends StatelessWidget {
             runAlignment: WrapAlignment.spaceEvenly,
             alignment: WrapAlignment.spaceEvenly,
             children: [
-              Text(
-                'Start a project',
-                style: TextStyle(
-                    fontSize: 3.sp > 14 ? 3.sp : 14,
-                    fontWeight: FontWeight.bold),
-              ),
-              Text(
-                'Interested in working together? \nI\'ll buy the coffee.',
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 18),
-              ),
               TextButton(
                 onPressed: () {
-                  openURL('https://www.linkedin.com/in/ehab-nasser-a23139223/');
+                  html.window.open(
+                      'https://drive.google.com/file/d/1qsv8CdbuK_foAPH_CGw5qoQWvO4tEklQ/view?usp=share_link',
+                      "pdf");
                 },
-                child: Text(
-                  "Contact me",
-                  style: TextStyle(
-                    fontSize: 20,
-                  ),
-                ),
                 style: TextButton.styleFrom(
-                    padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-                    side: BorderSide(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 20, horizontal: 20),
+                    side: const BorderSide(
                         color: Color.fromRGBO(55, 16, 247, 1), width: 3),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30.0),
                     )),
+                child: const Text(
+                  "Download Resume",
+                  style: TextStyle(
+                    fontSize: 20,
+                  ),
+                ),
               ),
             ],
           ),

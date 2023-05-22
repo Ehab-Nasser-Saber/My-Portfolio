@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_portfolio/widgets/page_components/components.dart';
@@ -32,7 +31,7 @@ class LandingPage extends StatelessWidget {
       drawer: !Responsive.isDesktop(context) ? const MobileDrawer() : null,
       body: BlocBuilder<ThemeCubit, ThemeState>(
         builder: (context, state) {
-          return Components();
+          return const Components();
         },
       ),
     );

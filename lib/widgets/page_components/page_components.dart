@@ -9,10 +9,10 @@ import '../../Components/skills/skills.dart';
 
 class PageComponents {
   static List<Widget> views = [
-    INFO(),
-    Skills(),
+    const INFO(),
+    const Skills(),
     ProjectCards(),
-    ContactMe(),
-    Footer()
+    const ContactMe(),
+    const Footer()
   ];
 }

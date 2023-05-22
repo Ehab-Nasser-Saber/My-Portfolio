@@ -32,7 +32,7 @@ class _NavDesktopState extends State<NavDesktop> {
         child: Row(
           children: [
             const NavTitle(),
-            Expanded(child: SizedBox(width: double.infinity)),
+            const Expanded(child: SizedBox(width: double.infinity)),
             ...NavBarUtils.names.asMap().entries.map(
                   (e) => NavBarActionButton(
                     label: e.value,

@@ -33,13 +33,22 @@ please visit vlenseg.com for more info and use cases.''',
     CardData(
         projectDesc:
             '''On Myfuse app, you can find jobs for Freshers and Experienced people in multiple fields.
-             You can choose from a variety of Job options. We\'re a Startup based in Bangalore,
-              we\'ll be adding more options from reputed organizations soon.''',
+             You can choose from a variety of Job options. We're a Startup based in Bangalore,
+              we'll be adding more options from reputed organizations soon.''',
         projectScreen1: 'assets/images/screen1.png',
         projectScreen2: 'assets/images/screen2.png',
         projectScreen3: 'assets/images/screen3.png',
         projectUrl:
             'https://play.google.com/store/apps/details?id=com.airavas.myfuse'),
+    CardData(
+        projectDesc:
+            '''On Animeniac app, you can find The Top rated anime and manga, 
+            search for anime and manga, and create an account to save your watchlist on.
+      created using clean architecture, bloc, firebase.''',
+        projectScreen1: 'assets/images/anime1.png',
+        projectScreen2: 'assets/images/anime2.png',
+        projectScreen3: 'assets/images/anime3.png',
+        projectUrl: 'In development'),
     // CardData(
     //     projectDesc:
     //         '''On Myfuse website, you can find jobs for Freshers and Experienced people in multiple fields.
@@ -50,6 +59,8 @@ please visit vlenseg.com for more info and use cases.''',
     //     projectScreen3: 'assets/images/Capture1.PNG',
     //     projectUrl: 'https://www.myfuse.in/#contact'),
   ];
+
+  ProjectCards({super.key});
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -64,7 +75,7 @@ please visit vlenseg.com for more info and use cases.''',
                 SizedBox(
                   height: 5.h,
                 ),
-                Text(
+                const Text(
                   'My Startup Projects',
                   style: TextStyle(
                     fontSize: 25.0,
@@ -127,13 +138,13 @@ please visit vlenseg.com for more info and use cases.''',
 
 class Cards extends StatelessWidget {
   final CardData content;
-  Cards({required this.content});
+  const Cards({super.key, required this.content});
 
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
     return Container(
-      margin: EdgeInsets.all(12.0),
+      margin: const EdgeInsets.all(12.0),
       decoration: BoxDecoration(
         gradient: theme.contactCard,
         borderRadius: BorderRadius.circular(30),
@@ -144,7 +155,7 @@ class Cards extends StatelessWidget {
       // border: Border.all(color: primaryColor)),
       child: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 50,
           ),
           Row(
@@ -167,7 +178,7 @@ class Cards extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 35,
           ),
           Padding(
@@ -178,24 +189,27 @@ class Cards extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           TextButton(
             onPressed: () {
-              if (content.projectUrl.contains("http")) {
-                openURL(content.projectUrl);
-              } else {
-                return null;
-              }
+              content.projectUrl.contains("http")
+                  ? openURL(content.projectUrl)
+                  : const SizedBox.shrink();
+              // if (content.projectUrl.contains("http")) {
+              //   openURL(content.projectUrl);
+              // } else {
+              //   return null;
+              // }
             },
             child: Text(
               content.projectUrl,
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 18.0),
+              style: const TextStyle(fontSize: 18.0),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           )
         ],

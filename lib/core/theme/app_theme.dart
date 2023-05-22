@@ -43,14 +43,14 @@ class ThemeColors {
 
 extension ThemeExtras on ThemeData {
   Color get navBarColor => brightness == Brightness.light
-      ? Color.fromARGB(255, 177, 174, 174)
+      ? const Color.fromARGB(255, 177, 174, 174)
       : const Color(0xFF00040F);
   //
   Color get textColor => brightness == Brightness.light
       ? const Color(0xFF403930)
       : const Color(0xFFFFF8F2);
   //
-  Color get secondaryColor => Color.fromARGB(255, 151, 83, 254);
+  Color get secondaryColor => const Color.fromARGB(255, 151, 83, 254);
   //
   Gradient get serviceCard =>
       brightness == Brightness.light ? grayWhite : grayBack;

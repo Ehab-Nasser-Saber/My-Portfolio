@@ -7,14 +7,16 @@ import 'package:sizer/sizer.dart';
 import '../../core/responsive/responsive.dart';
 
 class Skills extends StatelessWidget {
+  const Skills({super.key});
+
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
-    return Container(
+    return SizedBox(
       width: MediaQuery.of(context).size.width,
       child: Column(
         children: [
-          Text(
+          const Text(
             'Skills',
             style: TextStyle(
               fontSize: 25.0,

@@ -85,11 +85,11 @@ class RoleWidget extends StatelessWidget {
         Text(
           skillNames,
           textAlign: TextAlign.center,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 15.0,
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 30.0,
         ),
       ],
