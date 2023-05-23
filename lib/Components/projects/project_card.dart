@@ -46,7 +46,7 @@ please visit vlenseg.com for more info and use cases.''',
             search for anime and manga, and create an account to save your watchlist on.
       created using clean architecture, bloc, firebase.''',
         projectScreen1: 'assets/images/anime1.png',
-        projectScreen2: 'assets/images/anime2.png',
+        projectScreen2: 'assets/images/anime4.png',
         projectScreen3: 'assets/images/anime3.png',
         projectUrl: 'In development'),
     // CardData(

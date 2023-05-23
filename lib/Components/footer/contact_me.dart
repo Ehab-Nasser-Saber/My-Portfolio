@@ -31,7 +31,7 @@ class ContactMe extends StatelessWidget {
               TextButton(
                 onPressed: () {
                   html.window.open(
-                      'https://drive.google.com/file/d/1qsv8CdbuK_foAPH_CGw5qoQWvO4tEklQ/view?usp=share_link',
+                      'https://drive.google.com/file/d/1ZQ8jwjYfgDkImYWSJWE2nZbXbbz-VRJN/view?usp=share_link',
                       "pdf");
                 },
                 style: TextButton.styleFrom(
