@@ -24,7 +24,8 @@ class ProjectCards extends StatelessWidget {
             '''Vlens is a Fintech enabler, automating customer onboarding to be fully online securely, and 
 ensuring for our customers that their client (supply/demand) is the one who claims to be,
 reading and verifying Egyptian ID, and use biometric checks to verify user against provided document,
-please visit vlenseg.com for more info and use cases.''',
+please visit vlenseg.com for more info and use cases.    
+  ''',
         projectScreen1: 'assets/images/vlens1.png',
         projectScreen2: 'assets/images/vlens2.png',
         projectScreen3: 'assets/images/vlens3.png',
@@ -34,7 +35,9 @@ please visit vlenseg.com for more info and use cases.''',
         projectDesc:
             '''On Myfuse app, you can find jobs for Freshers and Experienced people in multiple fields.
              You can choose from a variety of Job options. We're a Startup based in Bangalore,
-              we'll be adding more options from reputed organizations soon.''',
+              we'll be adding more options from reputed organizations soon.
+                
+                ''',
         projectScreen1: 'assets/images/screen1.png',
         projectScreen2: 'assets/images/screen2.png',
         projectScreen3: 'assets/images/screen3.png',
@@ -42,9 +45,9 @@ please visit vlenseg.com for more info and use cases.''',
             'https://play.google.com/store/apps/details?id=com.airavas.myfuse'),
     CardData(
         projectDesc:
-            '''On Animeniac app, you can find The Top rated anime and manga, 
+            '''On Animeniac app, you can find The Top rated anime and manga with Dark&LightMode, 
             search for anime and manga, and create an account to save your watchlist on.
-      created using clean architecture, bloc, firebase.''',
+      created using clean architecture, bloc, firebase ,with Localization for login/signup.''',
         projectScreen1: 'assets/images/anime1.PNG',
         projectScreen2: 'assets/images/anime2.PNG',
         projectScreen3: 'assets/images/anime3.PNG',
