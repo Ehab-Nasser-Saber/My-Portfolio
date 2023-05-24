@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/core/constant/url_launcher.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../core/color/colors.dart';
@@ -54,6 +55,7 @@ class INFO extends StatelessWidget {
                 ),
                 const Text(
                   'Hi, I\'m Ehab. Nice to meet you.',
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 25.0,
                     fontWeight: FontWeight.bold,
@@ -63,12 +65,60 @@ class INFO extends StatelessWidget {
                   height: 2.h,
                 ),
                 SizedBox(
-                  height: 40.h,
+                  height: 50.h,
                   width: 70.w,
-                  child: Text(
-                    'Since beginning my journey as a freelance developer nearly 2 years ago, I\'ve done remote work for agencies, and collaborated with talented people to create digital products for both business and consumer use. I\'m quietly confident, naturally curious, and perpetually working on improving my skills.',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 3.sp > 13 ? 3.sp : 13),
+                  child: Column(
+                    children: [
+                      Text(
+                        'Since beginning my journey as a freelance developer, I\'ve done remote work for agencies, and collaborated with talented people to create digital products for both business and consumer use. I\'m quietly confident, naturally curious, and perpetually working on improving my skills.',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(fontSize: 3.sp > 13 ? 3.sp : 13),
+                      ),
+                      SizedBox(
+                        height: 3.h,
+                      ),
+                      const Text(
+                        'Agencies I\'ve Worked For :',
+                        style: TextStyle(fontSize: 20),
+                        textAlign: TextAlign.center,
+                      ),
+                      Wrap(
+                        alignment: WrapAlignment.center,
+                        children: [
+                          TextButton(
+                              onPressed: () {
+                                openURL('https://www.codementor.io/');
+                              },
+                              child: Text(
+                                '<CodeMentorX>',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    color: primaryColor,
+                                    fontSize: 3.sp > 13 ? 3.sp : 13),
+                              )),
+                          TextButton(
+                              onPressed: () {},
+                              child: Text(
+                                '<Regon Technologies>',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    color: primaryColor,
+                                    fontSize: 3.sp > 13 ? 3.sp : 13),
+                              )),
+                          TextButton(
+                              onPressed: () {
+                                openURL('https://www.agyadeg.com/');
+                              },
+                              child: Text(
+                                '<Agyad Multi Projects>',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    color: primaryColor,
+                                    fontSize: 3.sp > 13 ? 3.sp : 13),
+                              )),
+                        ],
+                      )
+                    ],
                   ),
                 ),
               ],

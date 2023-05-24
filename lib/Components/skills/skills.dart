@@ -16,6 +16,9 @@ class Skills extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       child: Column(
         children: [
+          SizedBox(
+            height: 10.h,
+          ),
           const Text(
             'Skills',
             style: TextStyle(

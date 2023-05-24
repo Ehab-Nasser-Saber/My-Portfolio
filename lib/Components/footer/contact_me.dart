@@ -31,7 +31,7 @@ class ContactMe extends StatelessWidget {
               TextButton(
                 onPressed: () {
                   html.window.open(
-                      'https://drive.google.com/file/d/1ZQ8jwjYfgDkImYWSJWE2nZbXbbz-VRJN/view?usp=share_link',
+                      'https://drive.google.com/file/d/1Ri3dQVLxfHa8Uucm_2QCAaNoqqURcvec/view?usp=share_link',
                       "pdf");
                 },
                 style: TextButton.styleFrom(
@@ -44,6 +44,7 @@ class ContactMe extends StatelessWidget {
                     )),
                 child: const Text(
                   "Download Resume",
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 20,
                   ),
