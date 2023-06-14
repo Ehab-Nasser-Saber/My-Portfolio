@@ -52,9 +52,9 @@ please visit vlenseg.com for more info and use cases.
             '''On Ani-Me app, you can find The Top rated anime and manga with Dark&LightMode, 
             search for anime and manga, and create an account to save your watchlist on.
       created using clean architecture, bloc, firebase ,with Localization for login/signup.''',
-        projectScreen1: 'assets/images/myAnime1.PNG',
-        projectScreen2: 'assets/images/myAnime2.PNG',
-        projectScreen3: 'assets/images/myAnime3.PNG',
+        projectScreen1: 'assets/images/view1.png',
+        projectScreen2: 'assets/images/view2.png',
+        projectScreen3: 'assets/images/view3.png',
         projectUrlGoogle:
             'https://play.google.com/store/apps/details?id=com.animeniac.animeniac',
         inDevelopment: false,
