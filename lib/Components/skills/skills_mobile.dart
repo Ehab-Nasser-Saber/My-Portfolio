@@ -27,9 +27,9 @@ class SkillsMobile extends StatelessWidget {
               borderRadius: BorderRadius.circular(30),
               boxShadow: [blackColorShadow],
             ),
-            child: IntrinsicHeight(
+            child: const IntrinsicHeight(
               child: Column(
-                children: const [
+                children: [
                   Expanded(
                     child: RoleWidget(
                       imageUrl:

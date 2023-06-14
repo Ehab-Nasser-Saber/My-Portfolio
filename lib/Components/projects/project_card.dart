@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:my_portfolio/core/theme/app_theme.dart';
 
 import 'package:sizer/sizer.dart';
@@ -18,7 +19,9 @@ class ProjectCards extends StatelessWidget {
         projectScreen1: 'assets/images/Spash Screen.png',
         projectScreen2: 'assets/images/Login 01.png',
         projectScreen3: 'assets/images/Home.png',
-        projectUrl: 'In development'),
+        projectUrlGoogle: 'In development',
+        inDevelopment: true,
+        type: "Mobile App"),
     CardData(
         projectDesc:
             '''Vlens is a Fintech enabler, automating customer onboarding to be fully online securely, and 
@@ -29,8 +32,10 @@ please visit vlenseg.com for more info and use cases.
         projectScreen1: 'assets/images/vlens1.png',
         projectScreen2: 'assets/images/vlens2.png',
         projectScreen3: 'assets/images/vlens3.png',
-        projectUrl:
-            'https://play.google.com/store/apps/details?id=com.vlens.release'),
+        projectUrlGoogle:
+            'https://play.google.com/store/apps/details?id=com.vlens.release',
+        inDevelopment: false,
+        type: "Mobile App"),
     CardData(
         projectDesc:
             '''On Myfuse app, you can find jobs for Freshers and Experienced people in multiple fields.
@@ -41,17 +46,22 @@ please visit vlenseg.com for more info and use cases.
         projectScreen1: 'assets/images/screen1.png',
         projectScreen2: 'assets/images/screen2.png',
         projectScreen3: 'assets/images/screen3.png',
-        projectUrl:
-            'https://play.google.com/store/apps/details?id=com.airavas.myfuse'),
+        projectUrlGoogle:
+            'https://play.google.com/store/apps/details?id=com.airavas.myfuse',
+        inDevelopment: false,
+        type: "Mobile App"),
     CardData(
         projectDesc:
-            '''On Animeniac app, you can find The Top rated anime and manga with Dark&LightMode, 
+            '''On Ani-Me app, you can find The Top rated anime and manga with Dark&LightMode, 
             search for anime and manga, and create an account to save your watchlist on.
       created using clean architecture, bloc, firebase ,with Localization for login/signup.''',
-        projectScreen1: 'assets/images/anime1.PNG',
-        projectScreen2: 'assets/images/anime2.PNG',
-        projectScreen3: 'assets/images/anime3.PNG',
-        projectUrl: 'In development'),
+        projectScreen1: 'assets/images/myAnime1.PNG',
+        projectScreen2: 'assets/images/myAnime2.PNG',
+        projectScreen3: 'assets/images/myAnime3.PNG',
+        projectUrlGoogle:
+            'https://play.google.com/store/apps/details?id=com.animeniac.animeniac',
+        inDevelopment: false,
+        type: "Mobile App"),
     // CardData(
     //     projectDesc:
     //         '''On Myfuse website, you can find jobs for Freshers and Experienced people in multiple fields.
@@ -141,6 +151,7 @@ please visit vlenseg.com for more info and use cases.
 
 class Cards extends StatelessWidget {
   final CardData content;
+
   const Cards({super.key, required this.content});
 
   @override
@@ -158,6 +169,16 @@ class Cards extends StatelessWidget {
       // border: Border.all(color: primaryColor)),
       child: Column(
         children: [
+          Center(
+              child: Padding(
+            padding: const EdgeInsets.only(top: 10.0),
+            child: Text(
+              content.type,
+              style: TextStyle(
+                  fontSize: 3.sp > 13 ? 3.sp : 13, fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center,
+            ),
+          )),
           const SizedBox(
             height: 50,
           ),
@@ -195,23 +216,73 @@ class Cards extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          TextButton(
-            onPressed: () {
-              content.projectUrl.contains("http")
-                  ? openURL(content.projectUrl)
-                  : const SizedBox.shrink();
-              // if (content.projectUrl.contains("http")) {
-              //   openURL(content.projectUrl);
-              // } else {
-              //   return null;
-              // }
-            },
-            child: Text(
-              content.projectUrl,
-              textAlign: TextAlign.center,
-              style: const TextStyle(fontSize: 18.0),
-            ),
-          ),
+          content.inDevelopment
+              ? const Text(
+                  "In Development",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 18.0, color: Colors.blueAccent),
+                )
+              : content.webSite != null
+                  ? TextButton(
+                      onPressed: () {
+                        openURL(content.webSite!);
+                      },
+                      child: Text(
+                        content.webSite!,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(fontSize: 18.0),
+                      ),
+                    )
+                  : Center(
+                      child: Row(
+                        mainAxisAlignment: (content.projectUrlApple != null &&
+                                content.projectUrlGoogle != null)
+                            ? MainAxisAlignment.spaceEvenly
+                            : MainAxisAlignment.center,
+                        children: [
+                          content.projectUrlApple != null
+                              ? InkWell(
+                                  onTap: () {
+                                    openURL(content.projectUrlApple!);
+                                  },
+                                  child: const Row(
+                                    children: [
+                                      Text(
+                                        "Apple Store ",
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                            fontSize: 14.0,
+                                            color: Colors.blueAccent),
+                                      ),
+                                      Icon(
+                                        MdiIcons.apple,
+                                      ),
+                                    ],
+                                  ),
+                                )
+                              : const SizedBox.shrink(),
+                          content.projectUrlGoogle != null
+                              ? InkWell(
+                                  onTap: () {
+                                    openURL(content.projectUrlGoogle!);
+                                  },
+                                  child: const Row(
+                                    children: [
+                                      Text(
+                                        "Google Play ",
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                            fontSize: 14.0,
+                                            color: Colors.blueAccent),
+                                      ),
+                                      Icon(MdiIcons.googlePlay)
+                                    ],
+                                  ),
+                                )
+                              : const SizedBox.shrink(),
+                        ],
+                      ),
+                    ),
           const SizedBox(
             height: 20,
           )
@@ -220,3 +291,85 @@ class Cards extends StatelessWidget {
     );
   }
 }
+
+// class Cards extends StatelessWidget {
+//   final CardData content;
+//   const Cards({super.key, required this.content});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     var theme = Theme.of(context);
+//     return Container(
+//       margin: const EdgeInsets.all(12.0),
+//       decoration: BoxDecoration(
+//         gradient: theme.contactCard,
+//         borderRadius: BorderRadius.circular(30),
+//         boxShadow: [blackColorShadow],
+//       ),
+
+//       // borderRadius: BorderRadius.circular(16.0),
+//       // border: Border.all(color: primaryColor)),
+//       child: Column(
+//         children: [
+//           const SizedBox(
+//             height: 50,
+//           ),
+//           Row(
+//             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//             children: [
+//               Image.asset(
+//                 content.projectScreen1,
+//                 fit: BoxFit.cover,
+//                 width: 10.w,
+//               ),
+//               Image.asset(
+//                 content.projectScreen2,
+//                 fit: BoxFit.cover,
+//                 width: 10.w,
+//               ),
+//               Image.asset(
+//                 content.projectScreen3,
+//                 fit: BoxFit.cover,
+//                 width: 10.w,
+//               ),
+//             ],
+//           ),
+//           const SizedBox(
+//             height: 35,
+//           ),
+//           Padding(
+//             padding: const EdgeInsets.symmetric(horizontal: 10.0),
+//             child: Text(
+//               content.projectDesc,
+//               style: TextStyle(fontSize: 3.sp > 13 ? 3.sp : 13),
+//               textAlign: TextAlign.center,
+//             ),
+//           ),
+//           const SizedBox(
+//             height: 20,
+//           ),
+//           IconButton(icon: Icon(flutterIcons.),
+//             onPressed: () {
+//               content.projectUrl.contains("http")
+//                   ? openURL(content.projectUrl)
+//                   : const SizedBox.shrink();
+//               // if (content.projectUrl.contains("http")) {
+//               //   openURL(content.projectUrl);
+//               // } else {
+//               //   return null;
+//               // }
+//             },
+//             // child: Text(
+//             //   content.projectUrl,
+//             //   textAlign: TextAlign.center,
+//             //   style: const TextStyle(fontSize: 18.0),
+//             // ),
+//           ),
+//           const SizedBox(
+//             height: 20,
+//           )
+//         ],
+//       ),
+//     );
+//   }
+// }

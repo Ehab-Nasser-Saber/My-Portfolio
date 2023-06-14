@@ -15,6 +15,7 @@ class ThemeColors {
       brightness: Brightness.light,
       fontFamily: 'Poppins',
       primaryColor: primaryColor,
+      // ignore: deprecated_member_use
       backgroundColor: lightBackgroundColor,
       scaffoldBackgroundColor: lightBackgroundColor,
       visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -27,6 +28,7 @@ class ThemeColors {
     brightness: Brightness.dark,
     fontFamily: 'Poppins',
     primaryColor: primaryColor,
+    // ignore: deprecated_member_use
     backgroundColor: darkBackgroundColor,
     scaffoldBackgroundColor: const Color(0xFF00040F),
     visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -38,7 +40,7 @@ class ThemeColors {
     ),
   );
   static Brightness get currentSystemBrightness =>
-      SchedulerBinding.instance.window.platformBrightness;
+      SchedulerBinding.instance.platformDispatcher.platformBrightness;
 }
 
 extension ThemeExtras on ThemeData {
